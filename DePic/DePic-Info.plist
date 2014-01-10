@@ -8,8 +8,19 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon-60</string>
+				<string>Icon</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.commints.DePicfree</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -31,8 +42,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>view controller-based status bar appearance</key>
+	<string>NO</string>
 </dict>
 </plist>
