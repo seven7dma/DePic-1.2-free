@@ -22,7 +22,7 @@
 
 
 @implementation pianAppDelegate
-@synthesize navController,buyVC;
+@synthesize navController;
 
 - (void)dealloc
 {
@@ -48,7 +48,7 @@
     pianViewController *viewController = [pianViewController sharedViewController];
     self.navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    buyVC = [[BuyViewController alloc] initWithNibName:@"BuyViewController" bundle:Nil];
+   
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     self.navController.navigationBarHidden = YES;
     
@@ -204,11 +204,6 @@
 
 - (void)didFailToLoadMoreApps {
     NSLog(@"failure to load more apps");
-}
-
-
-- (void)proClicked{
-    
 }
 
 @end

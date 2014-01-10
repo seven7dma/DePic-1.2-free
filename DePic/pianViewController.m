@@ -19,7 +19,7 @@
 @end
 
 @implementation pianViewController
-@synthesize viewBackground,view_addview,buyVC,view_buyNow;
+@synthesize viewBackground,view_addview,view_buyNow;
 
 +(id)sharedViewController{
     NSString *nibName =  IS_IPHONE5 ? @"pianViewController_iPhone5" : @"pianViewController";
@@ -29,8 +29,7 @@
 {
     [super viewDidLoad];
     
-    buyVC = [[BuyViewController alloc] initWithNibName:@"BuyViewController" bundle:Nil];
-	// Do any additional setup after loading the view, typically from a nib.
+  	// Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -42,15 +41,15 @@
     [super viewDidAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     view_buyNow.hidden = YES;
-//    _pickerController = [[UIImagePickerController alloc] init];
-//	_pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-//	_pickerController.delegate = self;
-//	_pickerController.showsCameraControls = NO;
-//	_pickerController.allowsEditing = NO;
-//    _pickerController.wantsFullScreenLayout = YES;
-//    _pickerController.cameraViewTransform = CGAffineTransformScale(_pickerController.cameraViewTransform, CAMERA_TRANSFORM, CAMERA_TRANSFORM);
-//	[self.view addSubview:_pickerController.view];
-//	[self.view sendSubviewToBack:_pickerController.view];
+    _pickerController = [[UIImagePickerController alloc] init];
+	_pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+	_pickerController.delegate = self;
+	_pickerController.showsCameraControls = NO;
+	_pickerController.allowsEditing = NO;
+    _pickerController.wantsFullScreenLayout = YES;
+    _pickerController.cameraViewTransform = CGAffineTransformScale(_pickerController.cameraViewTransform, CAMERA_TRANSFORM, CAMERA_TRANSFORM);
+	[self.view addSubview:_pickerController.view];
+	[self.view sendSubviewToBack:_pickerController.view];
     
     
     [FlurryAds setAdDelegate:self];
@@ -115,6 +114,17 @@
     }
 }
 
+- (IBAction)btn_proClicked{
+    
+    view_buyNow.hidden= NO;
+    view_buyNow.alpha = 0.0;
+    [self.view bringSubviewToFront:view_buyNow];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.7];
+    [view_buyNow setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
 -(IBAction)actionSetting:(id)sender{
     [self imagePickerControllerDidCancel:_pickerController];
     pianSettingViewController *viewController = [pianSettingViewController sharedSettingViewController];
@@ -123,9 +133,8 @@
 
 -(IBAction)actionSplimage:(id)sender{
 
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/splimage-shoot-it.-splice/id608308710?mt=8"]];
-    
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"splimage-shoot-it.-splice://"]];
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/splimage-shoot-it.-splice/id608308710?mt=8"]];
+
 }
 
 -(IBAction)actionTwitter:(id)sender{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -30,6 +30,7 @@
                 <outlet property="viewTopbar" destination="64" id="107"/>
                 <outlet property="viewWatermark" destination="152" id="155"/>
                 <outlet property="view_addView" destination="V5g-At-wci" id="TL5-Ck-NKH"/>
+                <outlet property="view_buyNow" destination="xNP-L3-1W7" id="lly-Tl-Ig4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -81,6 +82,16 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hUs-ly-eHw">
+                            <rect key="frame" x="238" y="8" width="60" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="pro-button.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_proClicked" destination="-1" eventType="touchUpInside" id="CMI-Y0-tyx"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -120,12 +131,15 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qJI-SP-Kkc">
-                            <rect key="frame" x="20" y="0.0" width="46" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qJI-SP-Kkc">
+                            <rect key="frame" x="9" y="8" width="60" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button">
+                            <state key="normal" title="Button" image="pro-button.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btn_proClicked" destination="-1" eventType="touchUpInside" id="b6c-8O-UZH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -327,7 +341,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.60000002384185791" minValue="0.20000000298023224" maxValue="1" minimumValueImage="img_sliderbaricon.png" maximumValueImage="img_scrollbartrasparency.png" id="101">
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="1" minimumValueImage="img_sliderbaricon.png" maximumValueImage="img_scrollbartrasparency.png" id="101">
                             <rect key="frame" x="18" y="29" width="284" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
@@ -559,126 +573,6 @@
                                         <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="382"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" tag="55" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="370">
-                                    <rect key="frame" x="380" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="5">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="383"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="371">
-                                    <rect key="frame" x="455" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="6">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="384"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="57" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="372">
-                                    <rect key="frame" x="530" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="7">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="385"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="58" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="373">
-                                    <rect key="frame" x="605" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="8">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="386"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="59" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="374">
-                                    <rect key="frame" x="680" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="9">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="387"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="375">
-                                    <rect key="frame" x="755" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="10">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="388"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="61" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="376">
-                                    <rect key="frame" x="830" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="11">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="389"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" tag="62" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="377">
-                                    <rect key="frame" x="905" y="5" width="70" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" title="12">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="actionFilterButton:" destination="-1" eventType="touchUpInside" id="390"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </scrollView>
@@ -695,18 +589,24 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cwm-hW-aJa">
-                            <rect key="frame" x="206" y="278" width="75" height="37"/>
+                            <rect key="frame" x="45" y="278" width="75" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button" image="btn_inappbuy.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btn_buyOptionClickd:" destination="-1" eventType="touchUpInside" id="IXV-Y8-NGS"/>
+                            </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RRe-Ug-yzY">
-                            <rect key="frame" x="45" y="278" width="75" height="37"/>
+                            <rect key="frame" x="206" y="278" width="75" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button" image="btn_inappcancel.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="btn_buyOptionClickd:" destination="-1" eventType="touchUpInside" id="hCO-AI-vK9"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -807,7 +707,6 @@
         <image name="btn_cameradone.png" width="75" height="37"/>
         <image name="btn_cameratake.png" width="75" height="37"/>
         <image name="btn_done.png" width="60" height="20"/>
-        <image name="btn_done.png" width="60" height="20"/>
         <image name="btn_dropdownphoto.png" width="37" height="37"/>
         <image name="btn_dropdowntemplate.png" width="37" height="35"/>
         <image name="btn_inappbuy.png" width="75" height="37"/>
@@ -827,33 +726,20 @@
         <image name="img_tempback.png" width="320" height="360"/>
         <image name="img_templatebackground.png" width="298" height="298"/>
         <image name="img_textaligniconback.png" width="45" height="30"/>
-        <image name="img_textaligniconback.png" width="45" height="30"/>
-        <image name="img_textaligniconback.png" width="45" height="30"/>
         <image name="img_textaligniconcenter.png" width="33" height="21"/>
         <image name="img_textaligniconleft.png" width="35" height="21"/>
         <image name="img_textaligniconright.png" width="35" height="21"/>
         <image name="img_textback.png" width="320" height="216"/>
-        <image name="img_textback.png" width="320" height="216"/>
-        <image name="img_textback.png" width="320" height="216"/>
         <image name="img_textcloseback.png" width="30" height="30"/>
         <image name="img_texticonback.png" width="40" height="40"/>
-        <image name="img_texticonback.png" width="40" height="40"/>
-        <image name="img_texticonback.png" width="40" height="40"/>
-        <image name="popup_addback.png" width="219" height="19"/>
         <image name="popup_addback.png" width="219" height="19"/>
         <image name="popup_back.png" width="278" height="141"/>
-        <image name="popup_back.png" width="278" height="141"/>
-        <image name="popup_camera.png" width="91" height="70"/>
         <image name="popup_camera.png" width="91" height="70"/>
         <image name="popup_gallery.png" width="91" height="70"/>
-        <image name="popup_gallery.png" width="91" height="70"/>
+        <image name="pro-button.png" width="120" height="39"/>
         <image name="tabbar_bg.png" width="320" height="35"/>
         <image name="topbar_bg.png" width="320" height="35"/>
-        <image name="topbar_bg.png" width="320" height="35"/>
-        <image name="topbar_bg.png" width="320" height="35"/>
-        <image name="topbar_bg.png" width="320" height="35"/>
         <image name="topbar_change.png" width="50" height="15"/>
-        <image name="topbar_depic.png" width="96" height="24"/>
         <image name="topbar_depic.png" width="96" height="24"/>
         <image name="topbar_twitter.png" width="24" height="20"/>
     </resources>

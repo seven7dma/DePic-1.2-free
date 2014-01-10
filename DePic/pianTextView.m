@@ -194,14 +194,14 @@
     
     [textField resignFirstResponder];
     
-    if( [piandelegate respondsToSelector : @selector(actionTextDelegate:) ] )
-    {
-        [piandelegate actionTextDelegate:self.tag];
-    }
-    
-    [_btnResize setFrame:CGRectMake(_lblText.frame.size.width - 10.0f, _lblText.frame.size.height - 10.0f, 20.0f, 20.0f)];
-    [_lblText setLineBreakMode:NSLineBreakByTruncatingTail];
-    _lblText.numberOfLines = 0;
+//    if( [piandelegate respondsToSelector : @selector(actionTextDelegate:) ] )
+//    {
+//        [piandelegate actionTextDelegate:self.tag];
+//    }
+//    
+//    [_btnResize setFrame:CGRectMake(_lblText.frame.size.width - 10.0f, _lblText.frame.size.height - 10.0f, 20.0f, 20.0f)];
+//    [_lblText setLineBreakMode:NSLineBreakByTruncatingTail];
+//    _lblText.numberOfLines = 0;
     
     return TRUE;
 }

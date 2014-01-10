@@ -12,11 +12,14 @@
 
 @interface pianShareViewController : UIViewController<UIDocumentInteractionControllerDelegate, MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate>{
     IBOutlet UIScrollView *scrollView;
+    UIView *view_buyNow;
 }
 
 @property (nonatomic, retain) UIImage *imageShare;
 
 @property (nonatomic,retain) UIDocumentInteractionController *docController;
+
+@property (nonatomic,strong)IBOutlet UIView *view_buyNow;
 
 +(id)sharedShareViewController;
 
@@ -30,5 +33,7 @@
 -(IBAction)actionSavePhoto:(id)sender;
 -(IBAction)actionMMS:(id)sender;
 -(IBAction)actionEmail:(id)sender;
+- (IBAction)btn_proClicked;
+- (IBAction)btn_buyOptionClickd : (id)sender;
 
 @end

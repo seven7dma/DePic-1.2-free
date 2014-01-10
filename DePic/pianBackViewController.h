@@ -14,6 +14,7 @@
 
 @interface pianBackViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>{
     NSArray* arrayFilter;
+    UIView *view_buyNow;
 }
 
 @property (nonatomic, assign) id<pianBackDelegate> filterDelegate;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *filterView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet UIView *viewImage;
+@property (nonatomic, strong) IBOutlet UIView *view_buyNow;
 
 
 +(id)sharedViewController;
@@ -31,7 +33,8 @@
 - (IBAction)actionDone:(id)sender;
 
 - (IBAction)actionFilterButton:(id)sender;
-
+- (IBAction)btn_proClicked;
+- (IBAction)btn_buyOptionClickd : (id)sender;
 
 @end
 

@@ -9,20 +9,18 @@
 #import <UIKit/UIKit.h>
 
 #import "Chartboost.h"
-#import "BuyViewController.h"
 
 @interface pianViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, ChartboostDelegate>{
     
     UIImagePickerController *_pickerController;
     UIView *view_addview;
     
-    BuyViewController *buyVC;
+
     UIView *view_buyNow;
 }
 
 @property (nonatomic, retain) IBOutlet UIView *viewBackground;
 @property (nonatomic, strong) IBOutlet UIView *view_addview;
-@property (nonatomic, strong) BuyViewController *buyVC;
 @property (nonatomic, strong) IBOutlet UIView *view_buyNow;
 
 +(id)sharedViewController;
@@ -40,5 +38,7 @@
 -(IBAction)actionMore:(id)sender;
 
 - (IBAction)btn_buyOptionClickd : (id)sender;
+
+- (IBAction)btn_proClicked;
 
 @end

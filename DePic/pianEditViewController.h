@@ -156,4 +156,7 @@
 
 - (IBAction)actionFilterButton:(id)sender;
 
+- (IBAction)btn_proClicked;
+- (IBAction)btn_buyOptionClickd : (id)sender;
+
 @end

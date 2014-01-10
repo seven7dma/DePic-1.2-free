@@ -18,10 +18,11 @@
     UIImagePickerController *_backPickerContoller;
     
     UIView *view_addview;
+    UIView *view_buyNow;
 }
 
 @property (nonatomic,strong)IBOutlet UIView *view_addview;
-
+@property (nonatomic,strong)IBOutlet UIView *view_buyNow;
 
 +(id)sharedSettingViewController;
 
@@ -34,6 +35,9 @@
 -(IBAction)actionRestorePurchase:(id)sender;
 
 -(IBAction)actionCustomWaterMark:(id)sender;
+
+- (IBAction)btn_proClicked;
+- (IBAction)btn_buyOptionClickd : (id)sender;
 
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -30,6 +30,7 @@
                 <outlet property="viewTopbar" destination="245" id="296"/>
                 <outlet property="viewWatermark" destination="261" id="295"/>
                 <outlet property="view_addView" destination="rxj-77-h39" id="KVF-Gg-osL"/>
+                <outlet property="view_buyNow" destination="p5g-5U-B9d" id="V4G-no-vnJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -81,6 +82,16 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AKA-y4-LUW">
+                            <rect key="frame" x="238" y="8" width="60" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="pro-button.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_proClicked" destination="-1" eventType="touchUpInside" id="53O-XR-97h"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -93,6 +104,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vXQ-Zn-yES">
+                            <rect key="frame" x="9" y="8" width="60" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="pro-button.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_proClicked" destination="-1" eventType="touchUpInside" id="rOP-rH-hnW"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="265">
                             <rect key="frame" x="240" y="8" width="60" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -319,7 +340,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.60000002384185791" minValue="0.20000000298023224" maxValue="1" minimumValueImage="img_sliderbaricon.png" maximumValueImage="img_sliderbaricon.png" id="272">
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.20000000298023224" maxValue="1" minimumValueImage="img_sliderbaricon.png" maximumValueImage="img_sliderbaricon.png" id="272">
                             <rect key="frame" x="18" y="29" width="284" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
@@ -557,6 +578,38 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                 </view>
+                <view contentMode="scaleToFill" id="p5g-5U-B9d" userLabel="view_buyNow">
+                    <rect key="frame" x="0.0" y="76" width="319" height="416"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_inappback.png" id="Vii-NC-4ZY">
+                            <rect key="frame" x="20" y="64" width="278" height="332"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RD6-Zu-WqJ">
+                            <rect key="frame" x="45" y="333" width="75" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="btn_inappbuy.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_buyOptionClickd:" destination="-1" eventType="touchUpInside" id="MDc-oo-ObB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Cr-BQ-Ehe">
+                            <rect key="frame" x="206" y="333" width="75" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="btn_inappcancel.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_buyOptionClickd:" destination="-1" eventType="touchUpInside" id="ZbR-JC-Lbb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -654,6 +707,8 @@
         <image name="btn_done.png" width="60" height="20"/>
         <image name="btn_dropdownphoto.png" width="37" height="37"/>
         <image name="btn_dropdowntemplate.png" width="37" height="35"/>
+        <image name="btn_inappbuy.png" width="75" height="37"/>
+        <image name="btn_inappcancel.png" width="75" height="37"/>
         <image name="btn_texta.png" width="21" height="22"/>
         <image name="btn_textclose.png" width="15" height="15"/>
         <image name="btn_textpen.png" width="24" height="24"/>
@@ -663,6 +718,7 @@
         <image name="icon_text.png" width="24" height="24"/>
         <image name="icon_transparency.png" width="14" height="24"/>
         <image name="img_dropdownmenu.png" width="50" height="105"/>
+        <image name="img_inappback.png" width="278" height="332"/>
         <image name="img_sliderbaricon.png" width="14" height="24"/>
         <image name="img_tempback.png" width="320" height="360"/>
         <image name="img_templatebackground.png" width="298" height="298"/>
@@ -677,6 +733,7 @@
         <image name="popup_back.png" width="278" height="141"/>
         <image name="popup_camera.png" width="91" height="70"/>
         <image name="popup_gallery.png" width="91" height="70"/>
+        <image name="pro-button.png" width="120" height="39"/>
         <image name="tabbar_bg.png" width="320" height="35"/>
         <image name="topbar_bg.png" width="320" height="35"/>
         <image name="topbar_change.png" width="50" height="15"/>

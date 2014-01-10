@@ -140,19 +140,18 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     view_buyNow.hidden = YES;
-   // [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
     
-//    _pickerController = [[UIImagePickerController alloc] init];
-//	_pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-//	_pickerController.delegate = self;
-//	_pickerController.showsCameraControls = NO;
-//	_pickerController.allowsEditing = NO;
-//    _pickerController.wantsFullScreenLayout = YES;
-//    _pickerController.cameraViewTransform = CGAffineTransformScale(_pickerController.cameraViewTransform, CAMERA_TRANSFORM, CAMERA_TRANSFORM);
-//
-//    
-//	[self.view addSubview:_pickerController.view];
-//	[self.view sendSubviewToBack:_pickerController.view];
+    _pickerController = [[UIImagePickerController alloc] init];
+    _pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    _pickerController.delegate = self;
+    _pickerController.showsCameraControls = NO;
+    _pickerController.allowsEditing = NO;
+    _pickerController.wantsFullScreenLayout = YES;
+    _pickerController.cameraViewTransform = CGAffineTransformScale(_pickerController.cameraViewTransform, CAMERA_TRANSFORM, CAMERA_TRANSFORM);
+    
+	[self.view addSubview:_pickerController.view];
+	[self.view sendSubviewToBack:_pickerController.view];
     if (self.imgBackground.image == [UIImage imageNamed:@"background.png"]) {
         [_pickerController.view setAlpha:0];
     }
@@ -161,6 +160,39 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btn_proClicked{
+    
+    view_buyNow.hidden= NO;
+    view_buyNow.alpha = 0.0;
+    [self.view bringSubviewToFront:view_buyNow];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.7];
+    [view_buyNow setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (IBAction)btn_buyOptionClickd : (id)sender{
+    
+    if ([(UIButton*)sender tag] == 0) {
+        [self.view bringSubviewToFront:view_buyNow];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.7];
+        [view_buyNow setAlpha:0.0];
+        [UIView commitAnimations];
+        view_buyNow.hidden = YES;
+        [[UIApplication sharedApplication]
+         openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/depic-transparent-collage/id694589312?mt=8"]];
+    }else{
+        
+        [self.view bringSubviewToFront:view_buyNow];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.7];
+        [view_buyNow setAlpha:0.0];
+        [UIView commitAnimations];
+        view_buyNow.hidden = YES;
+    }
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -230,10 +262,12 @@
 }
 
 -(IBAction)actionChangeBackground:(id)sender{
-    pianBackViewController *viewController = [pianBackViewController sharedViewController];
-    viewController.filterDelegate = self;
-    viewController.imageOriginal = imgTemplateBack.image;
-    [self.navigationController pushViewController:viewController animated:YES];
+    
+    [self btn_proClicked];
+//    pianBackViewController *viewController = [pianBackViewController sharedViewController];
+//    viewController.filterDelegate = self;
+//    viewController.imageOriginal = imgTemplateBack.image;
+//    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(IBAction)actionCameraAuto:(id)sender{
@@ -264,7 +298,6 @@
     }else{
         _cameraPickerController.cameraDevice = UIImagePickerControllerCameraDeviceRear;
     }
-    
 }
 
 -(IBAction)actionCameraDone:(id)sender{
@@ -364,8 +397,16 @@
     currentFilterButton.layer.borderColor = [[UIColor greenColor] CGColor];
     currentFilterButton.layer.borderWidth = 2.0f;
     
-    currentFrame = [arrayFrameView objectAtIndex:frameIndex];
-    [currentFrame setImage:[self setupFilter:[(UIButton*)sender tag]-50 :imageFilter]];
+    //currentFrame = [arrayFrameView objectAtIndex:frameIndex];
+    //[currentFrame setImage:[self setupFilter:[(UIButton*)sender tag]-50 :imageFilter]];
+    
+    for (int j = 0; j<[arrayFrameView count]; j++) {
+        
+        //[[arrayFrameView objectAtIndex:j] setImage:[self setupFilter:[(UIButton*)sender tag]-50 :imageFilter]];
+        currentFrame = [arrayFrameView objectAtIndex:j];
+        imageFilter = [arrayImageFilter objectAtIndex:j];
+        [currentFrame setImage:[self setupFilter:[(UIButton*)sender tag]-50 :imageFilter]];
+    }
     
 }
 
@@ -381,9 +422,17 @@
 }
 
 -(IBAction)actionTransparentSliderChanged:(UISlider*)sender{
-    pianCTView *view = [arrayFrameView objectAtIndex:frameIndex];
-    if ((view.img_back.image != [UIImage imageNamed:@""]) && (view.img_back.image != [UIImage imageNamed:@"img_temp"])) {
-        [view.img_back setAlpha:sender.value];
+//    pianCTView *view = [arrayFrameView objectAtIndex:frameIndex];
+//    if ((view.img_back.image != [UIImage imageNamed:@""]) && (view.img_back.image != [UIImage imageNamed:@"img_temp"])) {
+//        [view.img_back setAlpha:sender.value];
+//    }
+    
+    for (int i = 0; i < [arrayFrameView count]; i++) {
+        
+        pianCTView *view = [arrayFrameView objectAtIndex:i];
+        if ((view.img_back.image != [UIImage imageNamed:@""]) && (view.img_back.image != [UIImage imageNamed:@"img_temp"])) {
+            [view.img_back setAlpha:sender.value];
+        }
     }
 }
 
@@ -497,7 +546,7 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
     frameIndex = [recognizer.view tag];
     
-    [self setBorder];
+    //[self setBorder];
     
     pianCTView *view = [arrayFrameView objectAtIndex:frameIndex];
     
@@ -512,8 +561,8 @@
 - (void)setBorder{
     [self hideBorder];
     currentFrame = [arrayFrameView objectAtIndex:frameIndex];
-    [currentFrame.layer setBorderWidth:1.0f];
-    [currentFrame.layer setBorderColor:[[UIColor greenColor] CGColor]];
+   // [currentFrame.layer setBorderWidth:1.0f];
+    //[currentFrame.layer setBorderColor:[[UIColor greenColor] CGColor]];
 
 }
 

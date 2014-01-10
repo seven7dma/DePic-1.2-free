@@ -29,7 +29,7 @@
 @end
 
 @implementation pianSettingViewController
-@synthesize view_addview;
+@synthesize view_addview,view_buyNow;
 
 
 +(id)sharedSettingViewController{
@@ -58,7 +58,42 @@
     [FlurryAds fetchAndDisplayAdForSpace:@"pianSettingViewController" view:view_addview size:BANNER_BOTTOM];
 
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    view_buyNow.hidden = YES;
 }
+
+- (IBAction)btn_proClicked{
+    
+    view_buyNow.hidden= NO;
+    view_buyNow.alpha = 0.0;
+    [self.view bringSubviewToFront:view_buyNow];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.7];
+    [view_buyNow setAlpha:1.0];
+    [UIView commitAnimations];
+}
+
+- (IBAction)btn_buyOptionClickd : (id)sender{
+    
+    if ([(UIButton*)sender tag] == 0) {
+        [self.view bringSubviewToFront:view_buyNow];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.7];
+        [view_buyNow setAlpha:0.0];
+        [UIView commitAnimations];
+        view_buyNow.hidden = YES;
+        [[UIApplication sharedApplication]
+         openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/depic-transparent-collage/id694589312?mt=8"]];
+    }else{
+        
+        [self.view bringSubviewToFront:view_buyNow];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.7];
+        [view_buyNow setAlpha:0.0];
+        [UIView commitAnimations];
+        view_buyNow.hidden = YES;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
